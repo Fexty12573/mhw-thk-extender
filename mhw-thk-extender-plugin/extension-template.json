@@ -1,0 +1,12 @@
+{
+    "functions": [
+        {
+            "name": "TestExtension",
+            "id": "0xCC"
+        },
+        {
+            "name": "SecondExtension",
+            "id": "0xCD"
+        }
+    ]
+}
