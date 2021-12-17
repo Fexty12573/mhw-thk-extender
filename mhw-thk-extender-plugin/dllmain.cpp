@@ -32,16 +32,19 @@ DWORD WINAPI Setup([[maybe_unused]] LPVOID hDll)
 
 
 	// Collect all extensions
-	for (fs::directory_entry entry : fs::directory_iterator(path))
+	if (fs::exists(path))
 	{
-		if (entry.path().extension() == ".dll")
+		for (fs::directory_entry entry : fs::directory_iterator(path))
 		{
-			ThkExtensionPlugin ext;
-			ext.json = ext.dll = entry.path();
-			ext.json.replace_extension(".json");
+			if (entry.path().extension() == ".dll")
+			{
+				ThkExtensionPlugin ext;
+				ext.json = ext.dll = entry.path();
+				ext.json.replace_extension(".json");
 
-			extensions.push_back(ext);
-			LOG(INFO) << "<thk-extender> Found Extension " << ext.dll.filename();
+				extensions.push_back(ext);
+				LOG(INFO) << "<thk-extender> Found Extension " << ext.dll.filename();
+			}
 		}
 	}
 
