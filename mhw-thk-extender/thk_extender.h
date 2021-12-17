@@ -10,7 +10,7 @@ struct THKSegment
 	byte SegmentType;
 	byte unk1;
 	uint32_t unk2;
-	uint32_t CheckType;
+	int32_t CheckType;
 	uint32_t Parameter1;
 	uint32_t unk3;
 	uint32_t unk4;
