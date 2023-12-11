@@ -37,17 +37,16 @@ struct THKSegment
 	uint32_t unkExtra[6];
 };
 
-template<typename _Ty, typename _Ty2 = void*>
-inline _Ty OffsetPointer(_Ty2 _Ptr, size_t _Offset)
+template<typename T, typename TPtr = void*>
+inline T* OffsetPointer(TPtr ptr, size_t offset)
 {
-	static_assert(std::is_pointer_v<_Ty>, "operation only supported on pointer types");
-	return reinterpret_cast<_Ty>(((byte*)_Ptr + _Offset));
+	return reinterpret_cast<T*>(((byte*)ptr + offset));
 }
 
 inline void* GetParentMonster(void* cThinkEm)
 {
-	static void* (*_GetParent)(void*) = (decltype(_GetParent))0x140a197b0;
-	return _GetParent(*(void**)((char*)cThinkEm + 0x630));
+	const auto ai = *OffsetPointer<void*>(cThinkEm, 0x630);
+	return *OffsetPointer<void*>(ai, 0x138);
 }
 
 #define THK_EXPORT extern "C" __declspec(dllexport)

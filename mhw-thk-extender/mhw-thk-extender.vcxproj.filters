@@ -23,8 +23,10 @@
     <ClCompile Include="thk_extender.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vcpkg.json">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

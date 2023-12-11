@@ -5,7 +5,7 @@
 
 std::map<uint32_t, THKFunction_t> THKExtender::s_THKFunctions;
 THKFunction_t THKExtender::s_OriginalTHKFunction = nullptr;
-THKFunction_t THKExtender::s_Target = (THKFunction_t)0x141343650;
+THKFunction_t THKExtender::s_Target = (THKFunction_t)0x1413339d0;
 
 
 uint64_t THKExtender::AiCheckHook(void* cThinkEm, THKSegment* segment, void* cThinkMgr)
@@ -20,7 +20,7 @@ uint64_t THKExtender::AiCheckHook(void* cThinkEm, THKSegment* segment, void* cTh
 	if (segment->CheckType < 0x3)
 		return result;
 
-	if (s_THKFunctions.find(segment->CheckType) != s_THKFunctions.end())
+	if (s_THKFunctions.contains(segment->CheckType))
 		result = s_THKFunctions.at(segment->CheckType)(cThinkEm, segment, cThinkMgr);
 
 	if (check < 0)

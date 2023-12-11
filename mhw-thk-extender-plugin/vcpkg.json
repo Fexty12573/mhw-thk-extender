@@ -1,0 +1,10 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+    "name": "thk-extender-plugin",
+    "version": "1.0.1",
+    "description": "The actual plugin that loads THK Extensions",
+    "dependencies": [
+        "nlohmann-json",
+        "minhook"
+    ]
+}

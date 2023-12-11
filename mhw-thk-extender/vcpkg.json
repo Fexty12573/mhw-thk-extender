@@ -1,0 +1,9 @@
+{
+    "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+    "name": "thk-extender-lib",
+    "version": "1.0.1",
+    "description": "The library for extending MHW THK",
+    "dependencies": [
+        "minhook"
+    ]
+}

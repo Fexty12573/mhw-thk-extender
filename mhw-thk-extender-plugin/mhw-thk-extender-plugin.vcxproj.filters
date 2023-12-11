@@ -37,5 +37,8 @@
     <None Include="extension-template.json">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="vcpkg.json">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
